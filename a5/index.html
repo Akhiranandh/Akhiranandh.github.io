@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+
+    <script>
+        function Submit() {
+            let name = document.getElementById("t1").value;
+            let email = document.getElementById("t2").value;
+            let password = document.getElementById("t3").value;
+
+            document.getElementById("nameOutput").innerHTML = "Name: " + name;
+            document.getElementById("emailOutput").innerHTML = "Email: " + email;
+            document.getElementById("passwordOutput").innerHTML = "Password: " + password;
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="t1" placeholder="Enter your name"><br><br>
+    <input type="text" id="t2" placeholder="Enter your email address"><br><br>
+    <input type="text" id="t3" placeholder="Enter your password"><br><br>
+    <input type="button" value="Submit" onclick="Submit()"><br><br>
+
+    <p id="nameOutput"></p>
+    <p id="emailOutput"></p>
+    <p id="passwordOutput"></p>
+</body>
+</html>
