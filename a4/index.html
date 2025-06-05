@@ -1,68 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Operations with Functions</title>
     <script>
-      //   (function add() {
-      //     console.log("Hello");
-      //   })();
-      //add();
+        function add(a, b) {
+            return a + b;
+        }
 
-      //////
+        function subtract(a, b) {
+            return a - b;
+        }
 
-      //   const add = 10;
-      //   const add = () => {
-      //     console.log("Testing")
-      //   };
-      //   add();
+        function multiply(a, b) {
+            return a * b;
+        }
 
-      // function calc(){
-      //     console.log("Calc Function")
-      // }
+        function divide(a, b) {
+            if (b === 0) {
+                return "Undefined (division by zero)";
+            }
+            return a / b;
+        }
 
-      // const calc = ()=>{
-      //     console.log("Calc Function")
-      // }
+        function calculateAll() {
+            let a = Number(t1.value);
+            let b = Number(t2.value);
 
-      //   const add = (a,b) => {
-      //     console.log(a+b);
-      //   };
-      //   add(2,3);
+            let result = "";
+            result += "<p>" + a + " + " + b + " = " + add(a, b) + "</p>";
+            result += "<p>" + a + " - " + b + " = " + subtract(a, b) + "</p>";
+            result += "<p>" + a + " × " + b + " = " + multiply(a, b) + "</p>";
+            result += "<p>" + a + " ÷ " + b + " = " + divide(a, b) + "</p>";
 
-      //   const add = (a, b) => {
-      //    return a+b
-      //   };
-      //   let result = add(2, 3);
-      //   console.log(result)
-
-      //   const add = (a, b) => {
-      //     return a + b;
-      //   };
-      //   let result = add(2, 3);
-      //   console.log(result);
-
-      //   const add = (...args) => {
-      //     console.log(args);
-      //   };
-      //   add(2, 3, 7, 1);
-
-      //   function add() {
-      //     console.log(arguments);
-      //   }
-      //   add(2, 3, 7, 1);
-
-      const f1 = () => {
-        console.log("f1 function");
-      };
-      const main = (fn) => {
-        fn();
-      };
-      main(f1)
-      
+            document.getElementById("result").innerHTML = result;
+        }
     </script>
-  </body>
+</head>
+<body>
+    <input type="text" id="t1" placeholder="Enter value of a">
+    <input type="text" id="t2" placeholder="Enter value of b">
+    <input type="button" value="Calculate All" onclick="calculateAll()">
+
+    <div id="result"></div>
+</body>
 </html>
