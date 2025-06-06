@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>FRUIT LIST</h1>
+    <div class="container">
+        <input type="text" id="fruitInput" placeholder="Enter fruit name">
+        <button onclick="addFruit()">Add</button>
+    </div>
+    <ul id="fruitList"></ul>
+
+    <script>
+        function addFruit() {
+            const fruitInput = document.getElementById("fruitInput");
+            const fruitList = document.getElementById("fruitList");
+
+            if (fruitInput.value.trim() !== "") {
+                const listItem = document.createElement("li");
+                listItem.textContent = fruitInput.value;
+                fruitList.appendChild(listItem);
+                fruitInput.value = ""; 
+            }
+        }
+
+       
+        document.getElementById("fruitInput").addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                addFruit();
+            }
+        });
+    </script>
+</body>
+</html>
