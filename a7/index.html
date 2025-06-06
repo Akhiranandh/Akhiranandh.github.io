@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fruit List</title>
+    <script>
+      const fruits = [];
+
+      function add() {
+        const input = document.getElementById("txt1").value.trim();
+        if (input !== "") {
+          fruits.push(input);
+          renderList();
+          document.getElementById("txt1").value = "";
+        }
+      }
+
+      function deleteFruit(index) {
+        fruits.splice(index, 1); // Remove the fruit at the given index
+        renderList();
+      }
+
+      function renderList() {
+        const listHTML = fruits
+          .map(
+            (fruit, idx) =>
+              `<li>${fruit} <button onclick="deleteFruit(${idx})">Delete</button></li>`
+          )
+          .join("");
+        document.getElementById("fruitList").innerHTML = listHTML;
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <h1>Fruit List</h1>
+      <input type="text" id="txt1" />
+      <button onclick="add()">Add</button>
+      <ul id="fruitList"></ul>
+    </div>
+  </body>
+</html>
