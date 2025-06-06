@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fruit List</title>
+    <script>
+      let fruits = [];
+      let lastSearch = "";
+
+      function del(value) {
+        fruits = fruits.filter((e) => e !== value);
+        dispFruits();
+      }
+
+      function dispFruits(list = fruits) {
+        let listHTML = list
+          .map(
+            (fruit) =>
+              `<li>${fruit} <button onclick="del('${fruit}')">Delete</button></li>`
+          )
+          .join("");
+        document.getElementById("fruitList").innerHTML = listHTML;
+      }
+
+      function add() {
+        const input = document.getElementById("txt1").value.trim();
+        if (input) {
+          fruits.push(input);
+          dispFruits();
+          document.getElementById("txt1").value = "";
+        }
+      }
+
+      function search() {
+        const searchValue = document.getElementById("txt1").value.trim().toLowerCase();
+        lastSearch = searchValue;
+        if (searchValue) {
+          const filtered = fruits.filter(fruit =>
+            fruit.toLowerCase().includes(searchValue)
+          );
+          dispFruits(filtered);
+        } else {
+          dispFruits();
+        }
+      }
+
+      function showAll() {
+        document.getElementById("txt1").value = "";
+        dispFruits();
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <h1>Fruit List</h1>
+      <input type="text" id="txt1" />
+      <button onclick="add()">Add</button>
+      <button onclick="search()">Search</button>
+      <button onclick="showAll()">Show All</button>
+      <ul id="fruitList"></ul>
+    </div>
+  </body>
+</html>
