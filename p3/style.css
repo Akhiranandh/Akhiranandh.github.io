@@ -1,0 +1,124 @@
+body {
+  background: #f5f6fa;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 32px auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 24px;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #273c75;
+}
+
+.form-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.form-toggle button {
+  margin: 0 8px;
+  padding: 8px 20px;
+  border: none;
+  background: #dcdde1;
+  color: #273c75;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-form input {
+  margin-bottom: 12px;
+  padding: 10px;
+  border: 1px solid #dcdde1;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 80%;
+}
+
+.auth-form button {
+  padding: 10px 0;
+  width: 80%;
+  background: #273c75;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.form-message {
+  color: #e84118;
+  margin-top: 8px;
+  min-height: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+#welcome {
+  color: #353b48;
+  font-weight: bold;
+}
+
+#logout {
+  background: #e84118;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+#posts {
+  margin-top: 16px;
+}
+
+.post {
+  background: #f1f2f6;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.post-title {
+  font-weight: bold;
+  color: #353b48;
+}
+
+.post-body {
+  margin: 8px 0;
+  color: #353b48;
+}
+
+.comments {
+  margin-top: 10px;
+  padding-left: 10px;
+  border-left: 2px solid #dcdde1;
+}
+
+.comment {
+  margin-bottom: 8px;
+  font-size: 0.95em;
+  color: #636e72;
+}
